@@ -2,6 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const handlebars = require("express-handlebars")
 const path = require("path")
+const route = require("./routes")
 const app = express();
 //HTTP logger
 app.use(morgan("combined"))
@@ -12,11 +13,15 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources\\views"))
 //config static file
 app.use(express.static(path.join(__dirname, "public")))
+//middleware xu ly sumit form
+app.use(express.urlencoded({
+    extended: true
+}))
+app.use(express.json())
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-    res.render("home")
-})
+// Routes init
+route(app);
 
 app.listen(PORT, () => {
     console.log("CONNECT TO PORT", PORT)
