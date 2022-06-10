@@ -1,10 +1,18 @@
 @import "variables";
 .card-border {
+    margin-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    min-height: 350px;
-
+    min-height: 450px;
+    position: relative;
     a {
         color: $black;
         text-decoration: unset;
+    }
+
+    .btn-buy {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
