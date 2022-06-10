@@ -1,5 +1,10 @@
 @import "variables";
-h1 {
-    font-size: 1rem;
-    font-weight: 600;
+.card-border {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    min-height: 350px;
+
+    a {
+        color: $black;
+        text-decoration: unset;
+    }
 }

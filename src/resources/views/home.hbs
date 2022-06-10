@@ -1,1 +1,16 @@
-<h1>Home page</h1>
+<div class="row mt-4">
+  {{#each courses}}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card card-border" style="width: 18rem;">
+        <a href="/khoa-hoc/{{this.slug}}">
+          <img class="card-img-top" src="{{this.image}}" />
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <a href="#" class="btn btn-outline-success mt-4">Mua khóa học</a>
+          </div>
+        </a>
+      </div>
+    </div>
+  {{/each}}
+</div>
